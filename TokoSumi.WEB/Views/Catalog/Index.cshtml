@@ -1,0 +1,207 @@
+﻿
+@using Toko_Sumi.VIEWMODELS
+@model List<VMProduct>
+
+
+
+
+<h1>Catalog Product</h1>
+<div class="row">
+                                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                                        <div class="card card-hover">
+                                            <div class="p-2 bg-cyan text-center">
+                                                <h1 class="font-light text-white" id="id_total_product">0</h1>
+                                                <h6 class="text-white">Total Products</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Column -->
+                                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                                        <div class="card card-hover">
+                                            <div class="p-2 bg-success text-center">
+                                                <h1 class="font-light text-white" id="id_estimate">0</h1>
+                                                <h6 class="text-white">Estimate Price</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Column -->
+                                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                                       <button class="button" id="btn_cart"><i class="fa fa-shopping-cart"></i>Add To Cart</button>
+                                    </div>
+
+ </div>
+
+
+<div class="row">
+    @foreach (VMProduct item in Model)
+	{
+					<div class="col-lg-3 col-md-6">
+
+					<div class="card" style="width:18rem;">
+					<img class="img-responsive" src="~/Images/@item.Image" alt="" >
+						  <div class="card-body">
+						   <h4 style="text-align:center;" class="card-title" id="name_prod_@item.IdProduct"><b>@item.NameProduct</b></h4>
+						   <h6 style="text-align:center;">Stock: @item.Stock</h6>
+						   <h6 style="text-align:center;" id="id_price_@item.IdProduct">@item.Price</h6>
+						   <div class="row">
+							   <div class="col-4">
+								   <a href="#" class="btn btn-danger btn_min" data-id="@item.IdProduct" >-</a>
+								</div>
+
+								 <div class="col-4">
+
+										<p id="jumlah_@item.IdProduct" >0</p>
+								</div>
+
+								<div class="col-4">
+
+										 <a href="#" class="btn btn-success btn_plus" data-id="@item.IdProduct" >+</a>
+								</div>
+
+							</div>
+
+
+
+					</div>
+				</div>
+				</div>
+	}
+</div>
+
+<div id="modal-default" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true" >
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header" id="id_header_modal">
+												<h4 class="modal-title" id="myModalLabel">Product</h4>
+												<button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+											</div>
+											<div class="modal-body" id="id_modal">
+
+											</div>
+
+										</div>
+</div>
+ </div>
+
+<script>
+	var cart = []
+	var obj = {}
+	var total_product = 0
+	var estimate = 0
+
+
+	$(".btn_plus").click(function(){
+		obj = {}
+		var id = $(this).data("id")
+		total_product = parseInt($("#id_total_product").text())
+		estimate = parseInt($("#id_estimate").text())
+		var jumlah_product = parseInt($("#jumlah_"+id).text())
+		var name_product = $("#name_prod_"+id).text()
+		var sumprice = parseInt($("#id_sumprice").text())
+
+		var price = parseInt($("#id_price_"+id).text())
+
+		total_product += 1
+		estimate += price
+		jumlah_product += 1
+		sumprice = price * jumlah_product
+
+		obj.IdProduct = id
+		obj.NameProduct = name_product
+		obj.Qty = jumlah_product
+		obj.SumPrice = sumprice
+		obj.Price = price
+
+
+
+		var index = cart.findIndex(x => x.IdProduct === id);
+		if(index == -1)
+		{
+			cart.push(obj)
+		}
+		else
+		{
+			cart[index].SumPrice = obj.SumPrice
+			cart[index].Qty = obj.Qty
+			cart[index].Price = obj.Price
+		}
+		console.log(cart)
+
+		$("#id_total_product").text(total_product)
+		$("#id_estimate").text(estimate)
+		$("#jumlah_"+id).text(jumlah_product)
+
+	})
+
+	$(".btn_min").click(function(){
+		obj = {}
+		var id = $(this).data("id")
+		total_product = parseInt($("#id_total_product").text())
+		estimate = parseInt($("#id_estimate").text())
+		var jumlah_product = parseInt($("#jumlah_"+id).text())
+		var sumprice = parseInt($("#id_sumprice").text())
+
+		var price = parseInt($("#id_price_"+id).text())
+
+
+		if(total_product > 0 && jumlah_product>0 ){
+
+
+
+		
+
+			if(jumlah_product>0)
+			{
+				total_product -= 1
+				estimate -= price
+				jumlah_product -= 1
+
+				var index = cart.findIndex(x => x.IdProduct === id);
+				if(index != -1)
+				{
+					cart[index].Qty = jumlah_product
+					cart[index].SumPrice = price * jumlah_product
+					cart[index].Price = Price
+				}
+
+				if(parseInt(jumlah_product) == 0){
+					cart.splice(index,1)
+				}
+				console.log(cart)
+
+			}
+
+		}
+
+
+		$("#id_total_product").text(total_product)
+		$("#id_estimate").text(estimate)
+		$("#jumlah_"+id).text(jumlah_product)
+
+	})
+
+	$("#btn_cart").click(function(){
+		//alert(JSON.stringify(cart))
+		
+
+		$.ajax({
+			type: "POST",
+			url: "/Catalog/OrderPreview",
+			data: {cart: cart,TotalProduct: total_product, Estimate: estimate},
+			success: function (respon) {
+				$("#id_header_modal").empty();
+				$("#id_header_modal").text("Order Preview");
+				$("#id_modal").empty();
+			
+				$("#id_modal").append(respon);
+				$("#modal-default").modal("show");
+
+			}
+		})
+	})
+</script>
+
+
+

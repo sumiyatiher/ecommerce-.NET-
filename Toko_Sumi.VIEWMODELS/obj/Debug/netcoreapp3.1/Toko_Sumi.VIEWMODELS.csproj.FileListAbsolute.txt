@@ -1,0 +1,10 @@
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.deps.json
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.dll
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.pdb
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.csproj.AssemblyReference.cache
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.AssemblyInfoInputs.cache
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.AssemblyInfo.cs
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.csproj.CoreCompileInputs.cache
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.dll
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.VIEWMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.VIEWMODELS.pdb

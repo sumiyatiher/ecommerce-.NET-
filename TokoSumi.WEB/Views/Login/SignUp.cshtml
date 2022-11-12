@@ -1,0 +1,109 @@
+﻿@using Toko_Sumi.VIEWMODELS
+@model List<Toko_Sumi.VIEWMODELS.VMOrder>
+@{
+Layout = null;
+}
+
+<div class="col-12 bg-white">
+                    <div class="p-3">
+                        <h2 class="mt-atext-center">Sign Up</h2>
+                        <p class="text-center">Enter your email address and password</p>
+                        <form class="mt-4" id="regist">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="Email">Email</label>
+                                        <input class="form-control" type="text" placeholder="enter your email" id="Email" name="Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="Password">Password</label>
+                                        <input class="form-control" type="password" placeholder="enter your password" name="Password" id="Password">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="Name">Name</label>
+                                        <input class="form-control" id="NameCustomer" name="NameCustomer" type="text" placeholder="enter your name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="Phone">Phone</label>
+                                        <input class="form-control" id="Phone" name="Phone" type="text" placeholder="enter your phone">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="Address">Address</label>
+                                        <input class="form-control" name="Address" type="text" placeholder="enter your address" id="Address">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="uname">Role</label>
+                                        <input class="form-control"  name="IdRole" id="IdRole" type="text" placeholder="enter your role">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <button type="button" class="btn btn-block btn-dark" id="btn_have_account">? I Have Account</button>
+                                    <button type="button" class="btn btn-block btn-dark btn_regist" >Register</button>
+
+                                </div>
+                                @*<div class="col-lg-12 text-center mt-5">
+                                    Don't have an account? <a href="#" class="text-danger">Sign Up</a>
+                                </div>*@
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel"></h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body" id="id_modal">
+                                                
+                                            </div>
+                                            
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+
+<script>
+    $("#btn_have_account").click(function(){
+        $("#id_modal").load("/Login/Index")
+        $("#myModal").modal("show")
+    })
+
+    $(".btn_regist").click(function(){
+        var data = $("#regist").serialize();
+        debugger
+        $.ajax({
+            url: "Login/RegisterCek",
+            type: "POST",
+            data: data,
+            datatype: "json",
+            success: function(respon){
+                if(respon.status == "success"){
+                    alert(respon.message)
+                     $("#id_modal").load("/Login/Index")
+                     $("#myModal").modal("show")
+                }else
+                {
+                    alert(respon.message)
+                }
+            }
+
+
+        })
+    })
+</script>

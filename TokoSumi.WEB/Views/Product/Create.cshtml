@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+<h1>Create Product</h1>
+<form asp-action="Create" asp-controller="Product" id="createForm" enctype="multipart/form-data" class="row">
+        <div class="col-6">
+            <div class="mb-3">
+          <label for="IdCategory" class="form-label">Category</label>
+          <select class="form-control" id="IdCategory" name="IdCategory" asp-items="@(new SelectList(ViewBag.ListCategory,"IdCategory","NameCategory"))" >
+              <option value="">--Pilih--</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="IdVariant" class="form-label">Variant</label>
+          <select class="form-control" id="IdVariant" name="IdVariant" asp-items="@(new SelectList(ViewBag.ListVariant,"IdVariant","NameVariant"))" >
+              <option value="">--Pilih--</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="nama_product" class="form-label">Nama Product</label> 
+          <input type="text" class="form-control" id="NameProduct" name="NameProduct" minlength = "4" required>
+        </div>
+        </div>
+         <div class="col-6">
+             <div class="mb-3">
+          <label for="price" class="form-label">Price</label> 
+          <input type="text" class="form-control" id="Price" name="Price" required>
+        </div>
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock</label> 
+          <input type="text" class="form-control" id="Stock" name="Stock" required>
+        </div>
+        <div class="mb-3">
+          <input type="file" class="form-control" id="ProductImage" name="ProductImage" required>
+        </div>
+         </div>
+        
+        
+       <div class="modal-footer">
+             <button class="btn btn-primary" type="submit">Submit</button>   
+             <a class="btn btn-outline-primary" asp-action="Index" asp-controller="Product">Back to list</a>
+        </div>
+      
+</form>
+<script>
+    $("#createForm").validate({
+        errorClass: "text-danger",
+        rules:{
+            IdCategory : "required",
+            IdVariant : "required",
+            NameProduct: {
+                required: true,
+                minlength:4
+            },
+            
+            Price: "required",
+            Stock: "required"
+        },
+        messages:{ 
+            IdCategory : "Choose Category",
+            IdVariant : "Choose Variant",
+            NameProduct:{
+                required: "Please enter name product",
+                minlength: "Your name product must consist of at least 4 characters"
+            },
+            Price: "Please enter price of product",
+            Stock: "Please enter stock of product"
+        }
+    });
+
+    $(document).ready(function(){
+        $("#IdCategory").change(function(){
+            var idCategory  = $(this).val();
+             debugger
+            $.ajax({
+                url:"Product/DataVariantAjAX",
+                data:{idCategory : idCategory},
+                dataType:"json",
+                success: function(respon){
+                    $("#IdVariant").empty()
+                    $("#IdVariant").append("<option>--Pilih--</option>")
+                    $.each(respon, function(index, res){
+                        $("#IdVariant").append("<option value='" + res.idVariant + "'>"+ res.nameVariant+"</option>")
+                    })
+                }
+            })
+        });
+    });
+
+
+</script>
+
+

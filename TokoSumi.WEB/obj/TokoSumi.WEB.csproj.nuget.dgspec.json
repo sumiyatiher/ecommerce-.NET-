@@ -1,0 +1,312 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\TokoSumi.WEB\\TokoSumi.WEB.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\TokoSumi.WEB\\TokoSumi.WEB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\TokoSumi.WEB\\TokoSumi.WEB.csproj",
+        "projectName": "TokoSumi.WEB",
+        "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\TokoSumi.WEB\\TokoSumi.WEB.csproj",
+        "packagesPath": "C:\\Users\\62821\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\TokoSumi.WEB\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\62821\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\Toko_Sumi.DATAMODELS.csproj": {
+                "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\Toko_Sumi.DATAMODELS.csproj"
+              },
+              "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.REPO\\Toko_Sumi.REPO.csproj": {
+                "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.REPO\\Toko_Sumi.REPO.csproj"
+              },
+              "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj": {
+                "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.27, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.26, 3.1.26]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\Toko_Sumi.DATAMODELS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\Toko_Sumi.DATAMODELS.csproj",
+        "projectName": "Toko_Sumi.DATAMODELS",
+        "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\Toko_Sumi.DATAMODELS.csproj",
+        "packagesPath": "C:\\Users\\62821\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\62821\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.27, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.REPO\\Toko_Sumi.REPO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.REPO\\Toko_Sumi.REPO.csproj",
+        "projectName": "Toko_Sumi.REPO",
+        "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.REPO\\Toko_Sumi.REPO.csproj",
+        "packagesPath": "C:\\Users\\62821\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.REPO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\62821\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\Toko_Sumi.DATAMODELS.csproj": {
+                "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.DATAMODELS\\Toko_Sumi.DATAMODELS.csproj"
+              },
+              "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj": {
+                "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj",
+        "projectName": "Toko_Sumi.VIEWMODELS",
+        "projectPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj",
+        "packagesPath": "C:\\Users\\62821\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\62821\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

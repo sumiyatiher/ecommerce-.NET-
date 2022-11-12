@@ -1,0 +1,141 @@
+﻿@using TokoSumi.WEB.AddOns
+@using Toko_Sumi.VIEWMODELS
+@model PaginatedList<Toko_Sumi.VIEWMODELS.VMVariant>
+
+<h1>Variant List</h1>
+
+<button type="button" class="btn btn-primary" id="btn_add">Create</button>
+<br />
+<p>Tanggal = @ViewBag.Tanggal</p>
+<br />
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <div class="dataTables_length" id="zero_config_length">Show &nbsp;
+        <label> <select name="zero_config_length" aria-controls="zero_config" class="form-control form-control-sm" >
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select></label> &nbsp; entries
+        </div>
+    </div>
+    <form asp-action="Index" asp-controller="Variant" method="get">
+        @*<div class="col-sm-12 col-md-6">*@
+            <div id="zero_config_filter" class="dataTables_filter">Search: &nbsp;
+                <label><input name="searchName" type="text" value="@ViewBag.nama" class="form-control form-control-md" placeholder="" aria-controls="zero_config"></label> &nbsp;
+                <button  class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+   @*    </div>*@
+    </form>
+        
+       @*<input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" /*@
+</div>
+<table class="table table-striped table-hover">
+	<thead>
+	<tr>
+		<td>
+            <a asp-action="Index" asp-route-sortOrder = "@ViewBag.idVariant" asp-route-searchName="@ViewBag.nama">Id</a>
+           
+        </td>
+		<td>Category</td>
+		<td>
+            <a asp-action="Index" asp-route-sortOrder = "@ViewBag.nameVariant" asp-route-searchName="@ViewBag.nama" >Name Variant</a>
+      
+        </td>
+		<td>Description</td>
+		<td>Action</td>
+	</tr>
+	</thead>
+	<tbody>
+		@foreach(var item in Model)
+		{
+			<tr>
+				<td>@item.IdVariant</td>
+				<td>@item.NameCategory</td>
+				<td>@item.NameVariant</td>
+				<td>@item.Description </td>
+				<td>
+                     <a class="btn btn-success btn_edit" data-id = "@item.IdVariant">Edit</a> 
+                    <a class="btn btn-warning btn_detail" data-id="@item.IdVariant">Detail</a>
+                    <a class="btn btn-danger btn_delete" data-id="@item.IdVariant">Delete</a>
+					
+               </td>
+
+			</tr>
+		}
+	</tbody>
+	                                    
+</table>
+<div class="row">
+        <div class="col-sm-12 col-md-5">
+            <div class="dataTables_info" id="zero_config_info" role="status" aria-live="polite">
+                 Page @Model.PageIndex of @Model.TotalPages
+            </div>
+        </div>
+     <div class="col-sm-12 col-md-8">
+         <div class="dataTables_paginate paging_simple_numbers" id="zero_config_paginate">
+             <ul class="pagination">
+                 <li class="paginate_button page-item next" id="zero_config_next">
+                        @{
+                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                }
+
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewBag.CurrentSort"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewBag.nama"
+                   class="btn btn-primary @prevDisabled">
+                    Previous
+                </a>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewBag.CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewBag.nama"
+                   class="btn btn-primary @nextDisabled">
+                    Next
+                </a> 
+                 </li>
+             </ul>
+         </div>
+     </div>
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Variant</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body" id="id_modal">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+<script>
+    $("#btn_add").click(function(){
+        $("#id_modal").load("/Variant/Create")
+        $("#myModal").modal("show")
+    })
+    $(".btn_edit").click(function(){
+        var id = $(this).data("id")
+        $("#id_modal").load("/Variant/Edit?IdVariant="+id)
+        $("#myModal").modal("show")
+    })
+
+    $(".btn_delete").click(function(){
+        var id = $(this).data("id")
+        $("#id_modal").load("/Variant/Delete?IdVariant="+id)
+        $("#myModal").modal("show")
+    })
+
+        $(".btn_detail").click(function(){
+        var id = $(this).data("id")
+        $("#id_modal").load("/Variant/Detail?IdVariant="+id)
+        $("#myModal").modal("show")
+    })
+</script>

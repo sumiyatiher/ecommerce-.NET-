@@ -1,0 +1,16 @@
+﻿
+@model Toko_Sumi.VIEWMODELS.VMCategory;
+@{
+    Layout = null;
+}
+<h1>Delete Category</h1>
+<form asp-action="Delete" asp-controller="Category" method = "post">
+    <input type="hidden" Value="@Model.IdCategory" name="IdCategory" id="IdCategory"/>
+    <h4>Apakah anda yakin untuk menghapus @Model.NameCategory ?</h4>
+    <div class="modal-footer">
+            <button class="btn btn-danger">Ya, hapus</button>
+            <a class="btn btn-outline-primary" asp-action="Index" asp-controller="Category">Back to list</a> 
+
+    </div>
+    
+</form>

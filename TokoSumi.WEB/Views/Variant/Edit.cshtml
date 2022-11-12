@@ -1,0 +1,33 @@
+﻿
+@model Toko_Sumi.VIEWMODELS.VMVariant
+@{
+    Layout = null;
+}
+<h1>Edit Variant</h1>
+
+<br />
+<form asp-action="Edit" asp-controller="Variant" method = "post">
+    <input type="hidden" Value="@Model.IdVariant" name="IdVariant" id="NameVariant" />
+    <div class="mb-3">
+       
+          <label for="IdCategory" class="form-label">Category</label>
+            <tr>
+                <td>@Html.DropDownList("IdCategory", new SelectList(ViewBag.ListCategory, "IdCategory","NameCategory"),new {@class="form-control"})</td>
+            </tr>
+    </div>
+     <div class="mb-3">
+     
+          <label for="nama_variant" class="form-label">Nama Variant</label> 
+          <input type="text" class="form-control" id="NameVariant" name="NameVariant" value="@Model.NameVariant">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Deskripsi</label>
+              <textarea class="form-control" id="Description" name="Description" rows="3">@Model.Description</textarea>
+            </div>
+        
+        <div class="modal-footer">
+             <button class="btn btn-primary" type="submit">Submit</button>   
+             <a class="btn btn-outline-primary" asp-action="Index" asp-controller="Variant">Back to list</a>
+        </div>
+</form>
+

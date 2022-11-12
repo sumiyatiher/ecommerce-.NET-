@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}<
+    
+<div class="col-12">
+                    <div class="p-3">
+                        <div class="text-center">
+                            <img src="~/Template/assets/images/big/icon.png" alt="wrapkit">
+                        </div>
+                        <h2 class="mt-3 text-center">Sign In</h2>
+                       
+                        <form class="mt-4" id="id_form">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="uname" >Username or Email</label>
+                                        <input class="form-control" id="uname" type="text" placeholder="enter your username or email" name="Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="pwd">Password</label>
+                                        <input class="form-control" id="pwd" type="password" placeholder="enter your password" name="Password">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <button type="button" class="btn btn-block btn-dark" id="Sign_In">Sign In</button>
+                                </div>
+                                <div class="col-lg-12 text-center mt-5">
+                                    Don't have an account? <a href="#" class="text-danger" id="regist_btn">Sign Up</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                 <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body" id="id_modal">
+                                                
+                                            </div>
+                                            
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+
+<script>
+    $("#regist_btn").click(function(){
+        $("#id_modal").load("/Login/SignUp")
+        $("#myModal").modal("show")
+
+    })
+
+    $("#Sign_In").click(function(){
+        var data = $("#id_form").serialize()
+
+        $.ajax({
+            url: "/Login/Validation",
+            data: data,
+            type: "POST",
+            datatype: "json",
+            success: function(respon){
+                if(respon != null){
+                    alert("Welcome"+ " "+respon.nameCustomer)
+                }
+                else
+                {
+                    alert(respon.meassage)
+                }
+            }
+        })
+    })
+</script>

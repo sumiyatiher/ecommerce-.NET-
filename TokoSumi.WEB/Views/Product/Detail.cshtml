@@ -1,0 +1,43 @@
+﻿
+@model Toko_Sumi.VIEWMODELS.VMProduct
+@{
+    Layout = null;
+}
+<h1>Detail Product</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>Id Product:</th>
+    <td>@Model.IdProduct</td>
+  </tr>
+  <tr>
+    <th>Nama Kategori:</th>
+    <td>@Model.NameCategory</td>
+  </tr>
+  <tr>
+    <th>Nama Variant:</th>
+    <td>@Model.NameVariant</td>
+  </tr>
+  <tr>
+    <th>Nama Produk:</th>
+    <td>@Model.NameProduct</td>
+  </tr>
+  <tr>
+    <th>Stok:</th>
+    <td>@Model.Stock</td>
+  </tr>
+  <tr>
+    <th>Price:</th>
+    <td>Rp. @Model.Price</td>
+  </tr>
+  <tr>
+    <th>Create By:</th>
+    <td>@Model.CreateBy</td>
+  </tr>
+   <tr>
+    <th>Create Date:</th>
+    <td>@Model.CreateDate</td>
+  </tr>
+</table>
+<br />
+<a class="btn btn-outline-primary" asp-action="Index" asp-controller="Product">Back to list</a> 

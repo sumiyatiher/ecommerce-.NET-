@@ -1,0 +1,53 @@
+﻿@using Toko_Sumi.VIEWMODELS
+@model List<Toko_Sumi.VIEWMODELS.VMOrder>
+@{
+	Layout = null;
+	var data = ViewBag.Data;
+}
+<h1>Detail History Order</h1>
+
+
+	<tr>
+	<th>Code Transaction:</th>
+	<td>@data.CodeTransaction</td>
+</tr>
+<tr>
+	<th>Date :</th>
+	<td>@data.CreateDate</td>
+</tr>
+
+
+
+
+	<table class="table">
+	<thead>
+		<tr>
+		<td>Name Product</td>
+		<td>
+		 Price
+		</td>
+		<td>Qty</td>
+		<td>Sum Price</td>
+	</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+				<tr>
+					<td>@item.NameProduct</td>
+					<td>@item.Price</td>
+					<td>@item.Qty</td>
+					<td>@item.SumPrice</td>
+
+				</tr>
+		}
+
+		<td>Total : </td>
+			<td></td>
+			
+			<td >@data.TotalQty</td>
+			<td >@data.Amount</td>
+	</tbody>
+</table>
+

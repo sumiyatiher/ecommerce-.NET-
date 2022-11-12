@@ -1,0 +1,77 @@
+﻿
+@model Toko_Sumi.VIEWMODELS.VMProduct
+@{
+    Layout = null;
+}
+<h1>Edit Product</h1>
+
+<br />
+<form asp-action="Edit" asp-controller="Product" method = "post" enctype="multipart/form-data" class="row">
+    <input type="hidden" Value="@Model.IdProduct" name="IdProduct" id="NameProduct" />
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="IdCategory" class="form-label">Category</label>
+            
+                @Html.DropDownList("IdCategory", new SelectList(ViewBag.ListCategory, "IdCategory","NameCategory"),new {@class="form-control"})
+            
+            </div>
+            <div class="mb-3">
+                <label for="IdVariant" class="form-label">Variant</label>
+            
+                @Html.DropDownList("IdVariant", new SelectList(ViewBag.ListVariant, "IdVariant","NameVariant"),new {@class="form-control"})
+            
+            </div>
+            <div class="mb-3">
+                 <label for="nama_product" class="form-label">Nama Product</label> 
+          <input type="text" class="form-control" id="NameProduct" name="NameProduct" value="@Model.NameProduct">
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label> 
+          <input type="text" class="form-control" id="Price" name="Price" value="@Model.Price">
+            </div>
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock</label> 
+          <input type="text" class="form-control" id="Stock" name="Stock" value="@Model.Stock">
+            </div>
+            <div class="mb-3">
+                <input type="file" class="form-control" id="ProductImage" name="ProductImage"  >
+          <br />
+          <img src="~/Images/@Model.Image"   
+                         class="square"   
+                         height="60" width="60"   
+                         asp-append-version="true" />  
+            </div>
+        </div>
+
+        <div class="modal-footer">
+             <button class="btn btn-primary" type="submit">Submit</button>   
+             <a class="btn btn-outline-primary" asp-action="Index" asp-controller="Product">Back to list</a>
+        </div>
+</form>
+
+<script>
+    $(document).ready(function(){
+        $("#IdCategory").change(function(){
+            //alert($(this).val());
+             var idCategory  = $(this).val();
+        
+
+         $.ajax({
+                url:"Product/DataVariantAjAX",
+                data:{idCategory : idCategory},
+                dataType:"json",
+                success: function(respon){
+                    $("#IdVariant").empty()
+                    $("#IdVariant").append("<option>--Pilih--</option>")
+                    $.each(respon, function(index, res){
+                        $("#IdVariant").append("<option value='" + res.idVariant + "'>"+ res.nameVariant+"</option>")
+                    })
+                }
+            })
+        });
+    });
+</script>
+

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TokoSumi.WEB</title>
+    <script src="~/Template/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />*@
+    <!-- Custom CSS -->
+
+    <link href="~/Template/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link href="~/Template/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="~/Template/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Template/dist/css/style.min.css" rel="stylesheet">
+     
+</head>
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        <!-- ============================================================== -->
+    @Html.Partial("_Header")
+    @Html.Partial("_Sidebar")
+    
+
+    @*<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TokoSumi.WEB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a class = "nav-link text-dark" asp-controller="Category" asp-action="Index">Category</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a class = "nav-link text-dark" asp-controller="Variant" asp-action="Index">Variant</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>*@
+    <div class="page-wrapper">
+        <div class="container-fluid">
+    
+                @RenderBody()
+        </div>
+    </div>
+    <footer class="footer text-center text-muted">
+                All Rights Reserved by Adminmart. Designed and Developed by <a
+                    href="https://wrappixel.com">WrapPixel</a>.
+    </footer>
+    @*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - TokoSumi.WEB - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+@*    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)*@
+ @*   <script src="~/Template/assets/libs/jquery/dist/jquery.min.js"></script>*@
+    <script src="~/Template/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Template/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="~/Template/dist/js/app-style-switcher.js"></script>
+    <script src="~/Template/dist/js/feather.min.js"></script>
+    <script src="~/Template/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Template/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Template/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="~/Template/assets/extra-libs/c3/d3.min.js"></script>
+    <script src="~/Template/assets/extra-libs/c3/c3.min.js"></script>
+    <script src="~/Template/assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="~/Template/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="~/Template/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="~/Template/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Template/dist/js/pages/dashboards/dashboard1.min.js"></script>
+</body>
+</html>
+
+<style>
+    .img-responsive {
+        width: auto;
+        height: 180px !important;
+    }
+    .button{
+        background-color: orange;
+          border: none;
+          color: white;
+          padding: 0px 180px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+    }
+</style>

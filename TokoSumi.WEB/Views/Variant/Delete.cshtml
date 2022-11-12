@@ -1,0 +1,17 @@
+﻿
+@model Toko_Sumi.VIEWMODELS.VMVariant
+@{
+    Layout = null;
+}
+<h1>Delete Variant</h1>
+<form asp-action="Delete" asp-controller="Variant" method = "post">
+    <input type="hidden" Value="@Model.IdVariant" name="IdVariant" id="IdVariant" />
+    <h4>Apakah anda yakin untuk menghapus @Model.NameVariant ?</h4>
+    <div class="modal-footer">
+            <button class="btn btn-danger">Ya, hapus</button>
+            <a class="btn btn-outline-primary" asp-action="Index" asp-controller="Variant">Back to list</a> 
+
+    </div>
+</form>
+<br />
+

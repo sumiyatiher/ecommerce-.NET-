@@ -1,0 +1,76 @@
+﻿
+@using Toko_Sumi.VIEWMODELS
+@model List<VMOrder>
+
+@{
+    Layout = null;
+}
+
+<table class="table table-dark table-hover">
+	<thead class="bg-dark text-white">
+		<tr>
+		<td>Id</td>
+		<td>
+          Name Product
+        </td>
+		<td>Price</td>
+        <td>Quantity</td>
+		<td>Sum Price</td>
+	</tr>
+	</thead>
+
+	<tbody>
+		@foreach(VMOrder item in Model)
+		{
+			<tr>
+				<td>@item.IdProduct</td>
+				<td>@item.NameProduct</td>
+				<td>Rp. @item.Price</td>
+				<td>@item.Qty</td>
+				<td>@item.SumPrice</td>
+			</tr>
+			
+	
+		}
+			<td>Total : </td>
+			<td></td>
+			<td></td>
+			<td >@ViewBag.TotalProduct</td>
+			<td >Rp. @ViewBag.Estimate</td>
+	</tbody>
+</table>
+
+	 <input type="hidden" value="@ViewBag.TotalProduct" id="total_product" />
+	 <input type="hidden" value="@ViewBag.Estimate" id="estimate" />
+
+	  <br />
+		  <button class="btn btn-success" id ="btn_order">Order</button>
+<script>
+	$("#btn_order").click(function(){
+		var list = @Json.Serialize(Model)
+		debugger
+		alert($("#total_product").val())
+		var total_product = parseInt($("#total_product").val())
+		var estimate = parseInt($("#estimate").val())
+		debugger
+		console.log(list)
+		debugger
+		$.ajax({
+			url: "/Catalog/OrderJson",
+			type: "POST",
+			data: {cart:list, TotalProduct: total_product, Estimate: estimate},
+			datatype:"json",
+			success: function(respon) {
+				if(respon.status == "success"){
+					alert(respon.message)
+					$("modal-default").modal("hide");
+					window.location.reload()
+				}
+				else{
+					alert("unsuccess : "+ respon.message)
+				}
+			}
+		})
+
+	})
+</script>

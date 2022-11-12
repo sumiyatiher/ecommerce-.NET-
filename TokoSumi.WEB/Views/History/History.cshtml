@@ -1,0 +1,59 @@
+﻿
+@using Toko_Sumi.VIEWMODELS
+@model List<VMOrder>
+
+<h1>History</h1>
+<table class="table">
+	<thead>
+		<tr>
+		<td>Date Order</td>
+		<td>
+          Code Transaction
+        </td>
+		<td>Amount</td>
+        <td>Action</td>
+	</tr>
+	</thead>
+
+	<tbody>
+		@foreach(VMOrder item in Model)
+		{
+			<tr>
+				<td>@item.CreateDate</td>
+				<td>@item.CodeTransaction</td>
+				<td>Rp. @item.Amount</td>
+				<td>
+					<a class="btn btn-warning btn_detail" data-id="@item.IdHeader">Detail</a>
+				</td>
+			</tr>
+		}
+
+	</tbody>
+</table>
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true" >
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Detail History Order</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body" id="id_modal">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+ </div>
+
+ <script>
+
+	 $(".btn_detail").click(function(){
+        var id = $(this).data("id")
+		debugger
+        $("#id_modal").load("/History/Detail?IdHeader="+id)
+        $("#myModal").modal("show")
+	 })
+
+ </script>

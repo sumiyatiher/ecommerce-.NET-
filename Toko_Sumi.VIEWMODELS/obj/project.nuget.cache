@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "u7By/zDfquEWJOArmIqbt5LOMhDKT/rIo3zVwkaXMsc40m2Vt2+/FutaGpg2KFS/llHZYqNaE5+Z2a8CA5P7YA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\62821\\Desktop\\Teknologi\\toko_sumi\\Toko_Sumi\\Toko_Sumi.VIEWMODELS\\Toko_Sumi.VIEWMODELS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\62821\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+<h1>Create Variant</h1>
+<form asp-action="Create" asp-controller="Variant" id="createForm">
+         <div class="mb-3">
+          <label for="IdCategory" class="form-label">Category</label>
+          <select class="form-control" id="IdCategory" name="IdCategory" asp-items="@(new SelectList(ViewBag.ListCategory,"IdCategory","NameCategory"))" >
+              <option value="">--Pilih--</option>
+          </select>
+        </div>
+        <div class="mb-3">
+       @*for harus sama dengan id*@
+          <label for="nama_variant" class="form-label">Nama Variant</label> 
+          <input type="text" class="form-control" id="NameVariant" name="NameVariant" minlength = "4" required>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Deskripsi</label>
+          <textarea class="form-control" id="Description" name="Description" rows="3" required></textarea>
+        </div>
+        
+       <div class="modal-footer">
+             <button class="btn btn-primary" type="submit">Submit</button>   
+             <a class="btn btn-outline-primary" asp-action="Index" asp-controller="Variant">Back to list</a>
+        </div>
+      
+</form>
+<script>
+    $("#createForm").validate({
+        errorClass: "text-danger",
+        rules:{
+            IdCategory : "required",
+            NameVariant: {
+                required: true,
+                minlength:4
+            },
+            
+            Description: "required"
+        },
+        messages:{ 
+            IdCategory : "Choose type of category",
+            NameVariant:{
+                required: "Please enter name Variant",
+                minlength: "Your name variant must consist of at least 4 characters"
+            },
+            Description: "Please enter description of variant"
+        }
+    });
+
+</script>
+
+

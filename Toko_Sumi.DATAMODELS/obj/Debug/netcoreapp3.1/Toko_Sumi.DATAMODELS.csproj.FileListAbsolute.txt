@@ -1,0 +1,13 @@
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.deps.json
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.runtimeconfig.json
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.runtimeconfig.dev.json
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.dll
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\bin\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.pdb
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.csproj.AssemblyReference.cache
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.AssemblyInfoInputs.cache
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.AssemblyInfo.cs
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.csproj.CoreCompileInputs.cache
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.dll
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.pdb
+C:\Users\62821\Desktop\Teknologi\toko_sumi\Toko_Sumi\Toko_Sumi.DATAMODELS\obj\Debug\netcoreapp3.1\Toko_Sumi.DATAMODELS.genruntimeconfig.cache

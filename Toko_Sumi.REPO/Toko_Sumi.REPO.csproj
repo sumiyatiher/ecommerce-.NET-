@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Toko_Sumi.DATAMODELS\Toko_Sumi.DATAMODELS.csproj" />
+    <ProjectReference Include="..\Toko_Sumi.VIEWMODELS\Toko_Sumi.VIEWMODELS.csproj" />
+  </ItemGroup>
+
+</Project>

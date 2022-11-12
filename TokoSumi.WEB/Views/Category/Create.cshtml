@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+<h1>Create Category</h1>
+<form asp-action="Create" asp-controller="Category">
+        <div classer="Category" id="createForm">
+        <div class="mb-3">
+       @*for harus sama dengan id*@
+          <label for="nama_category" class="form-label">Nama Kategori </label> 
+          <input type="text" class="form-control" id="NameCategory" name="NameCategory" minlength="4" required>
+        </div>="mb-3">
+          <label for="description" class="form-label">Deskripsi</label>
+          <textarea class="form-control" id="Description" name="Description" rows="3" required></textarea>
+        </div>
+        
+     
+        <div class="modal-footer">
+             <button class="btn btn-primary" type="submit">Submit</button>   
+             <a class="btn btn-outline-primary" asp-action="Index" asp-controller="Category">Back to list</a>
+        </div>
+        
+      
+</form>
+
+<script>
+    $("#createForm").validate({
+        errorClass: "text-danger",
+        rules:{
+            NameCategory: {
+                required: true,
+                minlength:4
+            },
+            Description: "required"
+        },
+        messages:{
+            NameCategory:{
+                required: "Please enter name category",
+                minlength: "Your name category must consist of at least 4 characters"
+            },
+            Description: "Please enter description of category"
+        }
+    });
+
+</script>
+
+    @*id ke jquery, sedangkan name ke controller*@

@@ -1,0 +1,13 @@
+﻿
+@model Toko_Sumi.VIEWMODELS.VMCategory
+@{
+    Layout = null;
+}
+<h1>Detail Category</h1>
+
+<p>Nama Kategori = @Model.NameCategory</p>
+<p>Deskripsi = @Model.Description</p>
+<p>Create By = @Model.CreateBy</p>
+<p>Create Date = @Model.CreateDate</p>
+<br />
+<a class="btn btn-outline-primary" asp-action="Index" asp-controller="Category">Back to list</a> 
